@@ -8,4 +8,4 @@ spec:
       targetPort: 80
   selector:
     component: spark-ui-proxy
-  type: LoadBalancer
+  type: ClusterIP

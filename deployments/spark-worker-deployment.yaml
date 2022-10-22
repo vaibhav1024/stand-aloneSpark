@@ -14,8 +14,9 @@ spec:
     spec:
       containers:
         - name: spark-worker
-          image: spark3:v1
+          image: spark3:v8
           command: ["/opt/spark/docker-configs/spark-worker"]
+          imagePullPolicy: Never
           ports:
             - containerPort: 8081
           resources:

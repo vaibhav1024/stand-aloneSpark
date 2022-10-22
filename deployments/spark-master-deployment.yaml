@@ -14,11 +14,13 @@ spec:
     spec:
       containers:
         - name: spark-master
-          image: spark3:v1
-          command: ["/opt/spark/docker-configs/spark-master"]
+          image: spark3:v8
+          command: ["/bin/sh","-c"]
+          args: ["/opt/spark/docker-configs/spark-thrift;/opt/spark/docker-configs/spark-master;"]
           ports:
             - containerPort: 7077
             - containerPort: 8080
+          imagePullPolicy: Never
           resources:
             requests:
               cpu: 1
